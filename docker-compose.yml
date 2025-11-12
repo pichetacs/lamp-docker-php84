@@ -1,13 +1,7 @@
-version: '3.8'
 services:
   web:
-    # ใช้ image 'dev' ที่เราคุยกัน ง่ายดีครับ
-    image: fbraz3/lamp:8.4-dev 
-    
-    # นี่คือหัวใจสำคัญครับ
+    image: fbraz3/lamp:8.4-dev  # or fbraz3/lamp:8.4-phalcon-dev
     volumes:
-      # - ./:/app/public/ เปลี่ยน
-      - ./docker-test.php:/app/public/docker-test.php
-    # ให้ Codespace เปิดพอร์ต 8080 ให้เรา (เชื่อมกับพอร์ต 80 ใน container)
+      - ./:/app/public/
     ports:
-      - "8080:80"
+      - "127.0.0.1:80:80"
