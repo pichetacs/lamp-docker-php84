@@ -3,5 +3,8 @@ services:
     image: fbraz3/lamp:8.4-dev  # or fbraz3/lamp:8.4-phalcon-dev
     volumes:
       - ./:/app/public/
+      - ./pma.conf:/etc/apache2/conf-available/phpmyadmin.conf
     ports:
       - "127.0.0.1:80:80"
+      
+      
